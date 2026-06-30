@@ -27,14 +27,19 @@
 .section {
     margin-top: var(--section-gap);
     margin-bottom: var(--section-gap);
-    background: #e59480;
+  /*  background: #e59480; */
 }
   
 .container {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    background: #e5e380;
+   /* background: #e5e380; */
+}
+
+.container img {
+    width: 100%;
+    height: auto;
 }
 
 .align_center {
@@ -50,7 +55,8 @@
 }
 
 .green {
-    background: #25ff30;
+    flex: 1;
+  /* background: #25ff30; */
 }
 
 .centered {
@@ -72,10 +78,6 @@
     flex: 2;
 }
 
-.container img {
-    width: 100%;
-    height: auto;
-}
 
 body {
     background-color: var(--bg);
