@@ -1,5 +1,3 @@
-console.log("JS is working");
-
 const root = document.documentElement;
 const btn = document.getElementById("themeToggle");
 
