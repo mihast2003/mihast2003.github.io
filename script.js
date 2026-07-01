@@ -27,7 +27,7 @@ theme_btn.addEventListener("click", () => {
 });
 
 
-
+// for each minimize button: if clicked - adds class ".hidden" to closest ".window-body" 
 minimizeButtons.forEach(button => {
   button.addEventListener("click", () => {
     const window = button.closest(".window");
@@ -36,9 +36,38 @@ minimizeButtons.forEach(button => {
   });
 });
 
-closeButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const window = button.closest(".window");
-    window.style.display = "none";
+
+// for each window modal: get buttons and add functionality
+document.querySelectorAll(".window-modal").forEach(modal => {
+  const win = modal.closest(".window")
+  const closeBtn = win.querySelector(".close");
+
+  const yes = win.querySelector(".yes");
+  const no = win.querySelector(".no");
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
+
+  no.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  yes.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+});
+
+document.querySelectorAll(".modal-actions").forEach(modal => {
+  const yesButtons = modal.querySelectorAll(".yes");
+
+  let reversed = false;
+
+  // when entering "yes" button - switch row order of the parent object
+  yesButtons.forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+      reversed = !reversed;
+      modal.style.flexDirection = reversed ? "row-reverse" : "row";
+    });
   });
 });

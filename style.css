@@ -76,7 +76,7 @@
 .columns {
     display: flex;
     justify-content: center;
-    gap: 10vw;
+    gap: 10%;
 }
 
 .flex1 {
@@ -212,6 +212,7 @@ p {
 
 
 .window {
+    position: relative;
     display: block;
     width: 850px;
     height: 100%;
@@ -292,6 +293,51 @@ p {
     max-height: 0;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.window-modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.window-modal.hidden {
+    display: none;
+}
+  
+.modal-box {
+    background: var(--card);
+    padding: 15px;
+    border-radius: var(--corner-radius);
+    border: 3px solid #eaeaea;
+}
+
+.modal_btn {
+    width: 70px;
+    height: 40px;
+    font-family: Rubik;
+}
+
+.modal_btn.yes {
+    width: 70px;
+    height: 40px;
+    background: rgba(238, 59, 59, 0.548);
+    color: rgba(224, 199, 199, 0.74);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.modal_btn.no {
+    width: 70px;
+    height: 40px;
+    background: rgb(72, 190, 4);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .selection_container {
