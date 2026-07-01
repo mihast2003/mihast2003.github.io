@@ -31,7 +31,7 @@
     height: var(--section-height);
     margin-top: var(--section-gap);
     margin-bottom: var(--section-gap);
-    background: #e59480;
+ /*   background: #e59480; */
 }
   
 .container {
@@ -39,7 +39,7 @@
     height: auto;
     max-width: var(--container-width);
     margin: 0 auto;
-    background: #e5e380;
+ /*   background: #e5e380; */
 }
 
 .stretch_height {
@@ -69,8 +69,11 @@
 
 .centered {
     max-width: var(--container-width);
-    width: 100%;
     margin: 0 auto;
+}
+
+.center_txt {
+    text-align: center;
 }
   
 .columns {
@@ -97,13 +100,13 @@ body {
 h1 {
     font-size: 48px;
     font-weight: 700;
-    color: white;
+    color: var(--text);
     margin-bottom: 30px;
 }
 
 p {
     font-size: 18px;
-    color: #ffffff;
+    color: var(--text);
     line-height: 1.5;
 }
 
@@ -201,7 +204,7 @@ p {
 }
 
 .download-btn svg {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .download-btn:hover {
@@ -220,7 +223,7 @@ p {
     border: 0px solid #cfcfcf;
 
     border-radius: var(--corner-radius);
-    border-top-right-radius: calc(var(--corner-radius) - 1px);
+    border-top-right-radius: calc(var(--corner-radius) - 10px);
     overflow: hidden;
 
     background: var(--card);
@@ -232,7 +235,7 @@ p {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--window_header_title);
-    border-top-left-radius: var(--corner-radius);
+
     padding-left: 12px;
 }
   
@@ -298,11 +301,12 @@ p {
 .window-modal {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(11, 44, 94, 0.4);
   
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
   
 .window-modal.hidden {
@@ -310,6 +314,8 @@ p {
 }
   
 .modal-box {
+    position: relative;
+    width: 300px;
     background: var(--card);
     padding: 15px;
     border-radius: var(--corner-radius);
@@ -320,24 +326,39 @@ p {
     width: 70px;
     height: 40px;
     font-family: Rubik;
+    border: none;
+    background: transparent;
+    border-radius: var(--corner-radius);
 }
 
 .modal_btn.yes {
-    width: 70px;
-    height: 40px;
-    background: rgba(238, 59, 59, 0.548);
-    color: rgba(224, 199, 199, 0.74);
+    background: rgba(255, 78, 78, 0.664);
+    color: rgb(255, 237, 237);
     font-weight: 400;
     font-size: 13px;
 }
 
 .modal_btn.no {
-    width: 70px;
-    height: 40px;
     background: rgb(72, 190, 4);
     color: rgb(255, 255, 255);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
+}
+
+.modal_btn.close_modal {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal_btn.close_modal svg {
+    stroke: var(--window_header_title);
+}
+
+.modal_btn.close_modal:hover svg {
+    stroke: white;
 }
 
 .selection_container {

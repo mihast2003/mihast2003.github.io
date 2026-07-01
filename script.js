@@ -42,6 +42,8 @@ document.querySelectorAll(".window-modal").forEach(modal => {
   const win = modal.closest(".window")
   const closeBtn = win.querySelector(".close");
 
+  const closeModal = win.querySelector(".close_modal");
+
   const yes = win.querySelector(".yes");
   const no = win.querySelector(".no");
 
@@ -54,6 +56,10 @@ document.querySelectorAll(".window-modal").forEach(modal => {
   });
 
   yes.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  closeModal.addEventListener("click", () => {
     modal.classList.add("hidden");
   });
 });
