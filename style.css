@@ -1,11 +1,11 @@
 :root {
-    --corner-radius: 12px;
+    --corner-radius: 10px;
 
     --bg: #a1d5ff;
     --text: rgb(9, 28, 114);
     --card: #ffffff;
-    --window_header: #80b8e5;
-    --window_header_title: #cff1ff;
+    --window_header: #a9d8ff;
+    --window_header_title: #aad1f7;
 
     --section-gap: 220px;
     --container-width: 1300px;
@@ -16,7 +16,7 @@
     --text: white;
     --card: #3058c5;
     --window_header: #274ebb;
-    --window_header_title: #4e79f0;
+    --window_header_title: #538af0;
 }
 
 .pt-1 { padding-top: 10px; }
@@ -37,7 +37,7 @@
     background: #e5e380;
 }
 
-.align_center {
+.flex_align_center {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -55,6 +55,7 @@
 
 .centered {
     max-width: var(--container-width);
+    width: 100%;
     margin: 0 auto;
 }
   
@@ -152,10 +153,22 @@ p {
     line-height: 1.5;
 }
 
-.download-btn {
+
+.technical_text {
     display: block;
     width: fit-content;
-    margin: 20px auto;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 10px auto;
     margin-top: 40px;
 
     background: #3bbb00;
@@ -175,6 +188,10 @@ p {
 
     transition: all 0.5s ease;
     will-change: transform;
+}
+
+.download-btn svg {
+    transform: translateY(-2px);
 }
 
 .download-btn:hover {
@@ -202,8 +219,7 @@ p {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    background: var(--window_header);
-    border-bottom: 0px solid #d8d8d8;
+    border-bottom: 2px solid var(--window_header_title);
     border-top-left-radius: var(--corner-radius);
     border-top-right-radius: 90px;
     padding-left: 12px;
@@ -216,11 +232,44 @@ p {
 }
 
 .window-corner {
-    width: 70px;
+    display: flex;
+    align-items: center;
+    width: 80px;
     height: 100%;
     background: var(--card);
     border-top-right-radius: var(--corner-radius);
 }
+
+.window-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+
+}
+
+.window-btn:hover{
+    background-color: var(--window_header);
+    border-radius: 0;
+}
+
+.window-btn svg {
+    width: 14px;
+    height: 14px;
+
+    stroke: var(--window_header_title);
+}
+
+.window-btn:hover svg{
+    stroke: white;
+}
+
 
 .window-body {
     flex: 1;
