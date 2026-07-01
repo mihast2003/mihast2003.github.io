@@ -8,6 +8,8 @@
     --window_header_title: #aad1f7;
 
     --section-gap: 220px;
+    --section-height: 600px;
+
     --container-width: 1300px;
 }
 
@@ -19,22 +21,29 @@
     --window_header_title: #538af0;
 }
 
-.pt-1 { padding-top: 10px; }
-.pt-2 { padding-top: 20px; }
-.pt-3 { padding-top: 40px; }
-.pt-4 { padding-top: 60px; }
+.pt-10 { padding-top: 10px; }
+.pt-20 { padding-top: 20px; }
+.pt-40 { padding-top: 40px; }
+.pt-60 { padding-top: 60px; }
+.pt-120 { padding-top: 120px; }
 
 .section {
+    height: var(--section-height);
     margin-top: var(--section-gap);
     margin-bottom: var(--section-gap);
-  /*  background: #e59480; */
+    background: #e59480;
 }
   
 .container {
     width: 100%;
+    height: auto;
     max-width: var(--container-width);
     margin: 0 auto;
-   /* background: #e5e380; */
+    background: #e5e380;
+}
+
+.stretch_height {
+    height: 100%;
 }
 
 .container img {
@@ -48,15 +57,14 @@
     flex-direction: column;
 }
 
-.align_top {
+.flex_align_top {
     display: flex;
     justify-content: top;
     flex-direction: column;
 }
 
 .green {
-    flex: 1;
-  /* background: #25ff30; */
+    background: #25ff30;
 }
 
 .centered {
@@ -209,10 +217,11 @@ p {
     height: 100%;
     margin: 0 auto;
     border: 0px solid #cfcfcf;
-    align-self: center;
+
     border-radius: var(--corner-radius);
+    border-top-right-radius: calc(var(--corner-radius) - 1px);
     overflow: hidden;
-    flex-direction: column;
+
     background: var(--card);
 }
   
@@ -223,7 +232,6 @@ p {
     justify-content: space-between;
     border-bottom: 2px solid var(--window_header_title);
     border-top-left-radius: var(--corner-radius);
-    border-top-right-radius: 90px;
     padding-left: 12px;
 }
   
@@ -239,7 +247,6 @@ p {
     width: 80px;
     height: 100%;
     background: var(--card);
-    border-top-right-radius: var(--corner-radius);
 }
 
 .window-btn {
@@ -252,8 +259,6 @@ p {
 
     border: none;
     background: transparent;
-    border-radius: 6px;
-
 }
 
 .window-btn:hover{
@@ -272,11 +277,21 @@ p {
     stroke: white;
 }
 
-
 .window-body {
     flex: 1;
     padding: 30px;
     overflow: auto;
+    transition: max-height 0.5s ease, padding 0.1s ease;
+}
+
+.window-body.minimized {
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .selection_container {

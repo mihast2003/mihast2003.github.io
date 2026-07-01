@@ -1,5 +1,8 @@
 const root = document.documentElement;
-const btn = document.getElementById("themeToggle");
+const theme_btn = document.getElementById("themeToggle");
+
+const minimizeButtons = document.querySelectorAll(".minimize");
+const closeButtons = document.querySelectorAll(".close");
 
 // load saved theme
 const saved = localStorage.getItem("theme");
@@ -13,12 +16,29 @@ if (saved) {
 }
 
 // toggle
-btn.addEventListener("click", () => {
+theme_btn.addEventListener("click", () => {
   const current = root.getAttribute("data-theme");
   const next = current === "dark" ? "light" : "dark";
 
   root.setAttribute("data-theme", next);
   localStorage.setItem("theme", next);
 
-  btn.textContent = next === "dark" ? "Light mode" : "Dark mode";
+  theme_btn.textContent = next === "dark" ? "Light mode" : "Dark mode";
+});
+
+
+
+minimizeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const window = button.closest(".window");
+    const body = window.querySelector(".window-body");
+    body.classList.toggle("minimized");
+  });
+});
+
+closeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const window = button.closest(".window");
+    window.style.display = "none";
+  });
 });
