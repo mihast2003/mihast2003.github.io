@@ -63,8 +63,14 @@ p {
     margin-top: var(--section-gap);
     margin-bottom: var(--section-gap);
 
-    margin-left: 5vw;
-    margin-right: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    z-index: 1;
  /*   background: #e59480; */
 }
   
@@ -89,6 +95,29 @@ p {
 }
 
 /* #endregion */
+
+/* #region BACKGROUND */
+
+.section .background {
+    position: absolute;
+    width: 1400px;
+    height: var(--section-height);
+    z-index: -1;
+    background: #3bf66a;
+}
+
+.bg_rect {
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.bg_r1 {top: 8%; left: -15%; width: 220px; height: 100px; background: #f8a251; }
+.bg_r2 {top: 40%; right: -16%; width: 220px; height: 100px; background: #a855f7; }
+
+/* #endregion */
+
 
 /* #region helpers */
 
