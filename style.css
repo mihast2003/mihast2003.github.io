@@ -16,7 +16,7 @@
 }
 
 [data-theme="dark"] {
-    --bg: #192da0;
+    --bg: #152891;
     --text: white;
     --card: #3058c5;
     --window_header: #274ebb;
@@ -25,7 +25,18 @@
 
 
 body {
-    background-color: var(--bg);
+    background: 
+    linear-gradient(
+        -10deg, 
+        #2050d346,
+        #477bbe6e,
+        #4720d377,
+        #458eb95d,
+        #3a51d15d,
+        #4c59ce57),
+    var(--bg);
+
+
     font-family: Rubik;
     text-align: left;
 }
@@ -51,6 +62,9 @@ p {
     height: var(--section-height);
     margin-top: var(--section-gap);
     margin-bottom: var(--section-gap);
+
+    margin-left: 5vw;
+    margin-right: 5vw;
  /*   background: #e59480; */
 }
   
