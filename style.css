@@ -96,6 +96,16 @@ p {
 
 /* #endregion */
 
+/* #region ANIMATIONS */
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+/* #endregion */
+
+
 /* #region BACKGROUND */
 
 .section .background {
@@ -103,7 +113,12 @@ p {
     width: 1400px;
     height: var(--section-height);
     z-index: -1;
-    background: #3bf66a;
+  /*  background: #3bf66a; */
+}
+
+.bg_shape {
+    position: absolute;
+    animation: float 10s ease-in-out infinite;
 }
 
 .bg_rect {
@@ -115,6 +130,9 @@ p {
 
 .bg_r1 {top: 8%; left: -15%; width: 220px; height: 100px; background: #f8a251; }
 .bg_r2 {top: 40%; right: -16%; width: 220px; height: 100px; background: #a855f7; }
+
+.bg_triangle1 {top: -3%; left: 44%; scale: 0.7;}
+.bg_triangle1 svg {fill: #fcc665;}
 
 /* #endregion */
 
