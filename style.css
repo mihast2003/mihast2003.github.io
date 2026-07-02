@@ -194,7 +194,7 @@ p {
 
 /* #endregion */
 
-/* #region download_button */
+/* #region DOWNLOAD_button */
 
 .download-btn {
     display: inline-flex;
@@ -220,7 +220,7 @@ p {
 
     box-shadow: 0 0 10px rgba(0, 255, 21, 0.404);
 
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
     will-change: transform;
 }
 
@@ -371,6 +371,7 @@ p {
     color: rgb(255, 255, 255);
     font-weight: 700;
     font-size: 24px;
+    will-change: transform;
 }
 
 .modal_btn.no:hover {
@@ -393,6 +394,17 @@ p {
 
 .modal_btn.close_modal:hover svg {
     stroke: white;
+}
+
+/* #endregion */
+
+
+/* #region videos */
+.trailer-video {
+    width: 100%;
+    display: block;
+    border-radius: var(--corner-radius); /* optional */
+    pointer-events: none;
 }
 
 /* #endregion */
