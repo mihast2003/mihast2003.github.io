@@ -23,6 +23,7 @@
     --window_header_title: #538af0;
 }
 
+
 body {
     background-color: var(--bg);
     font-family: Rubik;
@@ -73,6 +74,10 @@ p {
 
 .stretch_height {
     height: 100%;
+}
+
+.stretch_width {
+    width: 100%;
 }
 
 .container img {
@@ -140,6 +145,11 @@ p {
     left: 30px;
 
     width: 9vh;
+    z-index: 2000;
+}
+
+.hero-image {
+    max-width: 90vw;
 }
 
 .hero {
@@ -242,6 +252,7 @@ p {
     position: relative;
     display: block;
     width: 850px;
+    max-width: 90vw;
     height: 100%;
     margin: 0 auto;
     border: 0px solid #cfcfcf;
@@ -307,7 +318,7 @@ p {
 
 .window-body {
     flex: 1;
-    padding: 30px;
+    padding: 0px 30px 30px 30px;
     overflow: auto;
     transition: max-height 0.5s ease, padding 0.1s ease;
 }
@@ -419,3 +430,31 @@ p {
     flex-direction: column;
     margin-top: 20px;
 }
+
+/* #region MOBILE VERSION */
+
+@media (max-width: 900px) {
+    .columns {
+        flex-direction: column;
+        gap: 10vh;
+    }
+
+    .section {
+        height: 100%;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    .container {
+        max-width: 90vw;
+    }
+
+    .hero-image {
+        background-color: #25ccff;
+        max-width: 70vw;
+        margin: 0 auto;
+        margin-left: 15%;
+    }
+}
+
+/* #endregion */
