@@ -62,6 +62,18 @@ p {
  /*   background: #e5e380; */
 }
 
+.columns {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.small_columns {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
 /* #endregion */
 
 /* #region helpers */
@@ -110,11 +122,6 @@ p {
     text-align: center;
 }
   
-.columns {
-    display: flex;
-    justify-content: center;
-    gap: 10%;
-}
 
 .flex1 {
     flex: 1;
@@ -454,6 +461,21 @@ p {
         max-width: 70vw;
         margin: 0 auto;
         margin-left: 15%;
+    }
+
+    .hero-image {
+        background-color: #25ccff;
+        max-width: 70vw;
+        margin: 0 auto;
+        margin-left: 15%;
+    }
+
+    .modal_btn.yes {
+        background: rgb(72, 190, 4);
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        font-size: 24px;
+        will-change: transform;
     }
 }
 
