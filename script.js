@@ -1,9 +1,11 @@
 const root = document.documentElement;
-const theme_btn = document.getElementById("themeToggle");
 
 const minimizeButtons = document.querySelectorAll(".minimize");
 const closeButtons = document.querySelectorAll(".close");
 
+// #region Theme toggle
+
+const theme_btn = document.getElementById("themeToggle");
 // load saved theme
 const saved = localStorage.getItem("theme");
 
@@ -26,6 +28,9 @@ theme_btn.addEventListener("click", () => {
   theme_btn.textContent = next === "dark" ? "Light mode" : "Dark mode";
 });
 
+// #endregion
+
+// #region MINIMIZE BUTONS
 
 // for each minimize button: if clicked - adds class ".hidden" to closest ".window-body" 
 minimizeButtons.forEach(button => {
@@ -36,8 +41,11 @@ minimizeButtons.forEach(button => {
   });
 });
 
+// #endregion
 
-// for each window modal: get buttons and add functionality
+// #region modal
+
+// for each window-modal: get buttons and add functionality
 document.querySelectorAll(".window-modal").forEach(modal => {
   const win = modal.closest(".window")
   const closeBtn = win.querySelector(".close");
@@ -77,3 +85,5 @@ document.querySelectorAll(".modal-actions").forEach(modal => {
     });
   });
 });
+
+// #endregion
